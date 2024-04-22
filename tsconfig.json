@@ -10,7 +10,7 @@
       "noImplicitAny": true,
       "esModuleInterop": true,
       "resolveJsonModule": true,
-      "types": ["jest", "node"],
+      "types": ["node"],
       "typeRoots": ["./@types", "./node_modules/@types"]
     },
     "exclude": ["dist", "./src/__tests__/**", "jest.config.ts"]
