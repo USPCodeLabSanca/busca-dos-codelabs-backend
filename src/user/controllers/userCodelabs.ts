@@ -11,7 +11,7 @@ const userCodelabs = async (req: Request, res: Response) => {
 
     const codelabs = await prisma.codelab.findMany({
       where: { users: { some: { telegram } } },
-      select: { id: true, order: true, name: true, image: true, description: true },
+      select: { id: true, order: true, name: true, image: true, description: true, background: true },
     })
 
     res.send({ codelabs })

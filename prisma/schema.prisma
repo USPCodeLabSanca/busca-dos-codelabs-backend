@@ -20,6 +20,7 @@ model codelab {
   order       Int
   description String
   image       String
+  background  String @default("fff")
   qrCode      String @unique @default(cuid())
   users       user[]
 }
