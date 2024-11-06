@@ -2,7 +2,9 @@ import { Request, Response } from 'express'
 import prisma from '../../db'
 
 const join = async (req: Request, res: Response) => {
-  const { name, telegram } = req.body
+  let { name, telegram } = req.body
+
+  telegram = telegram.replace('@', '')
 
   try {
     const user = await prisma.user.findUnique({ where: { telegram } })
