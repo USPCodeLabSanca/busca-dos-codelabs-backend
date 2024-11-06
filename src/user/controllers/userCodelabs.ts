@@ -7,7 +7,7 @@ const userCodelabs = async (req: Request, res: Response) => {
   try {
     const user = await prisma.user.findUnique({ where: { telegram } })
 
-    if (!user) res.status(404).send({ error: 'Usuário não encontrado' })
+    if (!user) return res.status(404).send({ error: 'Usuário não encontrado' })
 
     const codelabs = await prisma.codelab.findMany({
       where: { users: { some: { telegram } } },
